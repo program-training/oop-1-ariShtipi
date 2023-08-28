@@ -1,11 +1,103 @@
-// את הקוד שלכם תכתבו כאן
+// class Rectangle {
+//   hight: number;
+//   width: number;
 
-//  1. Rectangle - מלבן
+//   constructor(hight: number, width: number) {
+//     this.hight = hight;
+//     this.width = width;
+//   }
+//   area(): number {
+//     return this.hight * this.width;
+//   }
+// }
 
-//  2. Square - ריבוע
+// class Square extends Rectangle {
+//   constructor(width: number) {
+//     super(width, width);
+//   }
+//   area(): number {
+//     return this.width * this.width;
+//   }
+// }
 
-// 3. Shape - צורה
+// class Shape {
+//   info(): void {
+//     console.log("This is a Shape");
+//   }
+// }
 
-// 4. Method Chaining
+// class Rectangle extends Shape {
+//   hight: number;
+//   width: number;
+//   constructor(hight: number, width: number) {
+//     super();
+//     this.hight = hight;
+//     this.width = width;
+//   }
+//   area(): number {
+//     return this.hight * this.width;
+//   }
+//   info(): void {
+//     console.log("This is a Rectangle");
+//   }
+//   scale(num:number): this {
+//     this.hight *= num;
+//     this.width *= num;
+//     return this;
+//   }
+//   static anotherStaticMethod(r1: Rectangle, r2: Rectangle): Rectangle {
+//     return new Rectangle(r1.width + r2.width, r1.hight + r2.hight);
+//   }
+// }
+// class ColoredRectangle extends Rectangle {
+//   color: string;
+//   constructor(hight: number, width: number, color: string) {
+//     super(hight, width);
+//     this.color = color;
+//   }
+//   info(): void {
+//     console.log(`This is a Rectangle in color ${this.color}`);
+//   }
+// }
 
-// 5. Shape with draw method
+class Shape {
+  draw(): void {
+    console.log("drawing a shape"); 
+  }
+}
+
+class Circle extends Shape {
+  draw(): void {
+    console.log("drawing a circle");
+  }
+}
+
+class Triangle extends Shape {
+  draw(): void {
+    console.log("drawing a triangle");
+  }
+}
+
+class Square extends Shape {
+  draw(): void {
+    console.log("drawing a square");
+  }
+}
+
+function renderShapes(shapes: Shape[]): void {
+  for (const shape of shapes) {
+    shape.draw();
+  }
+}
+const shapes: Shape[] = [
+  new Shape(),
+  new Circle(),
+  new Triangle(),
+  new Square(),
+];
+
+renderShapes(shapes);
+
+// const rect = new Rectangle(5, 10);
+// console.log(rect.scale(2));
+
